@@ -8,9 +8,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-    - uses: seanmiddleditch/gha-setup-vsdevenv@master
-      with:
-        components: Microsoft.VisualStudio.Component.VC.Tools.x86.x64;Microsoft.VisualStudio.Component.VC.CoreIde;Microsoft.VisualStudio.Component.Windows10SDK
+    - uses: warrenbuckley/Setup-MSBuild@v1
     - name: MSBuild
       working-directory: src
       run: msbuild SharpGit.sln
